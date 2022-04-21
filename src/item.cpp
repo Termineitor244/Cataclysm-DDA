@@ -5474,6 +5474,9 @@ int item::engine_displacement() const
 
 const std::string &item::symbol() const
 {
+	if( has_itype_variant() ) {
+		return _itype_variant->alt_sym;
+	}
     return type->sym;
 }
 
@@ -6342,6 +6345,9 @@ nc_color item::color() const
     if( is_corpse() ) {
         return corpse->color;
     }
+	if( has_itype_variant() ) {
+		return _itype_variant->alt_color;
+	}
     return type->color;
 }
 
