@@ -5474,9 +5474,9 @@ int item::engine_displacement() const
 
 const std::string &item::symbol() const
 {
-	if( has_itype_variant() ) {
-		return _itype_variant->alt_sym;
-	}
+    if( has_itype_variant() ) {
+        return _itype_variant->alt_sym;
+    }
     return type->sym;
 }
 
